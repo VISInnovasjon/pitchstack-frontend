@@ -23,7 +23,7 @@ export function Signup() {
             const config= {
                 headers: {'Authorization': 'Bearer ' + token},
             }
-            await axios.post('https://aivispitchstackserver.azurewebsites.net/register', config)
+            await axios.post('https://vispitchstackserver.azurewebsites.net/register', config)
         }
     }
 
