@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from './landing.module.css'
+import axios from 'axios';
 import { Navigate, Link, useNavigate } from "react-router-dom";
 import { doSignInWithGoogle, doCreateUserWithEmailAndPassword, doSendEmailVerification, doPasswordReset } from "../../../firebase/auth"; 
 import { useAuth, getUser } from "../Context/authContext";
