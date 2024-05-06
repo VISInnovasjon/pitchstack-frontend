@@ -89,7 +89,7 @@ export async function fetchNewData(fileHash, uploadType) {
         
         if (uploadType === "form") {
             try {
-                const response = await axios.get(`https://aivispitchstackserver.azurewebsites.net/applications/${fileHash}`, config);
+                const response = await axios.get(`https://vispitchstackserver.azurewebsites.net/applications/${fileHash}`, config);
                 
     
                 if (response) {
@@ -116,7 +116,7 @@ export async function fetchNewData(fileHash, uploadType) {
         } else if (uploadType === "pitch") {
 
             try {
-                const response = await axios.get(`https://aivispitchstackserver.azurewebsites.net/uploads/${fileHash}`, config);
+                const response = await axios.get(`https://vispitchstackserver.azurewebsites.net/uploads/${fileHash}`, config);
                 
     
                 if (response) {
@@ -153,7 +153,7 @@ export async function deleteResponse(fileHash) {
         const config= {
             headers: {'Authorization': 'Bearer ' + token},     
             }
-        axios.delete(`https://aivispitchstackserver.azurewebsites.net/uploads/${fileHash}`, config)
+        axios.delete(`https://vispitchstackserver.azurewebsites.net/uploads/${fileHash}`, config)
             .then(response => console.log("Deleted response successfully", response))
             .catch(error => Promise.reject(error));
     };
