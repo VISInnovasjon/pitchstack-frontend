@@ -25,7 +25,7 @@ export function Signin() {
             const config= {
                 headers: {'Authorization': 'Bearer ' + token},
             }
-            await axios.post('https://aivispitchstackserver.azurewebsites.net/auth', config)
+            await axios.post('https://vispitchstackserver.azurewebsites.net/auth', config)
         }
     }
 
