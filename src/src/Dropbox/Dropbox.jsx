@@ -97,7 +97,7 @@ export function Dropbox() {
     };
     
     try {
-      const url = uploadType === "pitch" ? "https://aivispitchstackserver.azurewebsites.net/uploads" : "https://aivispitchstackserver.azurewebsites.net/applications";
+      const url = uploadType === "pitch" ? "https://vispitchstackserver.azurewebsites.net/uploads" : "https://vispitchstackserver.azurewebsites.net/applications";
       const response = await axios.post(url, formData, config);
       console.log("Upload successful", response.data);
       setFileHash(response.data.metadata.fileHash);
@@ -188,11 +188,11 @@ export function Dropbox() {
             headers: {'Authorization': 'Bearer ' + token},
         }
         try {
-          await axios.post('https://aivispitchstackserver.azurewebsites.net/auth', config)
+          await axios.post('https://vispitchstackserver.azurewebsites.net/auth', config)
         } catch (error) {
           console.log("Error authorizing user from GlobalDB", error);
           try {
-            await axios.post('https://aivispitchstackserver.azurewebsites.net/register', config)
+            await axios.post('https://vispitchstackserver.azurewebsites.net/register', config)
           } catch (error) {
             console.log("Error updating GlobalDB", error);
           }
