@@ -43,7 +43,7 @@ export function Aside() {
                 headers: {'Authorization': 'Bearer ' + token},
             }
             if (uploadType === "form") {
-                axios.get("https://aivispitchstackserver.azurewebsites.net/applications", config)
+                axios.get("https://vispitchstackserver.azurewebsites.net/applications", config)
                 .then(response => {
                     const responseData = response.data;
                     const pdfArray = Object.keys(responseData).map(hash => {
@@ -64,7 +64,7 @@ export function Aside() {
     
             else if (uploadType === "pitch") {
                 
-                axios.get("https://aivispitchstackserver.azurewebsites.net/uploads", config)
+                axios.get("https://vispitchstackserver.azurewebsites.net/uploads", config)
                 .then(response => {
                     const responseData = response.data;
                     const pdfArray = Object.keys(responseData).map(hash => {
