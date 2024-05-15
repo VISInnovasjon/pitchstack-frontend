@@ -135,7 +135,7 @@ export function Stats() {
                 if (index < ratings.length) {
                     const weight = ratings[index] ?? 0;
                     totalScore += ratingValue * weight;
-                    maxScore += ratingValue * 2.5;
+                    maxScore += 2.5 * weight;
                 }
             });
             const scoreValue = Math.floor((totalScore / maxScore) * 100);
