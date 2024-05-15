@@ -117,6 +117,7 @@ export function Stats() {
 
     function calculateWeightedScore(responseData, ratings) {
         let totalScore = 0;
+        let maxScore = 0;
         if (uploadType === "form") {
             Object.entries(responseData).forEach(([key, value], index) => {
                 const ratingValue = calculateWeightScore(value.rating);
@@ -134,9 +135,10 @@ export function Stats() {
                 if (index < ratings.length) {
                     const weight = ratings[index] ?? 0;
                     totalScore += ratingValue * weight;
+                    maxScore += ratingValue * 2.5;
                 }
             });
-            const scoreValue = Math.floor((totalScore / 300) * 100);
+            const scoreValue = Math.floor((totalScore / maxScore) * 100);
             return scoreValue;
         }
         
